@@ -1,7 +1,7 @@
 /**
  * jQuery iframe click tracking plugin
  * Version 1.3 (2014-05-16)
- * Copyright © 2014 Vincent Paré, www.finalclap.com
+ * Copyright Â© 2014 Vincent ParÃ©, www.finalclap.com
  */
 (function($){
 	// Registering new tracking handler
@@ -11,11 +11,11 @@
 		
 		// Binding boundary listener
 		$(this)
-			.bind('mouseover', {handler: handler}, function(e){
+			.bind('mouseover touchover', {handler: handler}, function(e){
 				e.data.handler.over = true;
 				try{ e.data.handler.overCallback(this); } catch(ex){}
 			})
-			.bind('mouseout',  {handler: handler}, function(e){
+			.bind('mouseout touchend',  {handler: handler}, function(e){
 				e.data.handler.over = false;
 				$.iframeTracker.focusRetriever.focus();
 				try{ e.data.handler.outCallback(this); } catch(ex){}
